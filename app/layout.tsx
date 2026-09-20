@@ -7,6 +7,7 @@ import "./globals.css";
 import "./refinement.css";
 import "./liquid-glass.css";
 import "./motion.css";
+import "./hero.css";
 
 export const metadata: Metadata = {
   title: "Autally Exchange — Hotel Invoices for Business Buyers",

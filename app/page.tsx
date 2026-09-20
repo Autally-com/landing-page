@@ -1,6 +1,6 @@
 import { ArrowRight, ArrowUpRight, CreditCard, ReceiptText, ShieldCheck, HandCoins, GitBranch, Building2 } from "lucide-react";
 import { Header } from "@/components/header";
-import { Brand } from "@/components/brand";
+import { Brand, BrandMark } from "@/components/brand";
 import { HeroNetwork } from "@/components/hero-network";
 import { PilotContact, contactHref } from "@/components/pilot-contact";
 import { GlassSurface } from "@/components/glass-surface";
@@ -15,17 +15,23 @@ export default function Home() {
     <div id="top" />
     <Header />
     <main id="main" className="focused-page">
-      <section className="hero container" aria-labelledby="hero-title">
+      <section className="hero mint-hero" aria-labelledby="hero-title"><div className="container hero-layout">
         <div className="hero-copy">
-          <h1 id="hero-title">Put hotel invoices where business buyers need them.</h1>
+          <h1 id="hero-title"><span>Automate hotel invoices.</span> <span>Make business stays easier.</span></h1>
           <div className="hero-intro">
-            <p className="hero-lead">Business travellers pay for their stay. Their finance teams still need the invoice, purchase details, and tax information.</p>
-            <p className="hero-purpose">Autally is building a permissioned network to connect hotels and PMS providers with the expense, accounting, and receipt applications those businesses use.</p>
+            <p className="hero-lead">We’re building a network to cut invoice admin for hotels and get business travellers’ invoices into their company’s expense tools.</p>
             <div className="hero-actions"><CTA /><a href="#exchange" className="text-link">See the hotel example<ArrowRight size={17} aria-hidden="true" /></a></div>
           </div>
         </div>
-        <p className="hero-audience">For hotels, property management systems (PMS), point-of-sale (POS) systems, and receipt platforms.</p>
-      </section>
+        <figure className="hero-journey" aria-label="Illustrative authorized invoice journey: from a hotel or PMS, through Autally Exchange, to the business buyer’s expense application.">
+          <svg className="hero-ribbon" viewBox="0 0 520 430" preserveAspectRatio="none" aria-hidden="true"><path d="M52 98 C52 152 150 110 150 178 C150 235 350 195 350 265" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" pathLength="1" /></svg>
+          <div className="journey-source" aria-hidden="true"><Building2 size={30} strokeWidth={1.5} /><div><strong>Hotel / PMS</strong><span>The invoice at its source</span></div></div>
+          <div className="journey-exchange" aria-hidden="true"><BrandMark /><span>Autally Exchange</span><ArrowRight size={20} /></div>
+          <div className="journey-buyer" aria-hidden="true"><ReceiptText size={26} strokeWidth={1.5} /><div><span>For the business buyer</span><strong>The invoice.<br />In their expense app.</strong></div><div className="journey-permission"><ShieldCheck size={15} />With authorized access</div></div>
+          <figcaption>Illustrative connection. Network in development.</figcaption>
+        </figure>
+      </div></section>
+      <div className="hero-context container"><p>Starting with hotels and property management systems. Built to connect with expense, accounting, and receipt applications.</p><a href="#providers" className="text-link">For data providers<ArrowRight size={17} aria-hidden="true" /></a></div>
 
       <section id="exchange" className="section container use-case" aria-labelledby="example-title">
         <div className="section-heading"><h2 id="example-title">The stay is over.<br />The paperwork isn’t.</h2><div className="section-description"><p>A business has the hotel payment on its card statement. Its finance team still needs the invoice to account for the trip.</p></div></div>
