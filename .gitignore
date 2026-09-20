@@ -1,0 +1,13 @@
+node_modules/
+.next/
+out/
+*.tsbuildinfo
+.env*
+!.env.example
+.playwright-cli/
+.impeccable/cache/
+
+.agent-team/
+.agents/
+.impeccable/
+.playwright/
