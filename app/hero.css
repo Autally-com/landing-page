@@ -21,8 +21,11 @@
 .journey-source { position: absolute; left: 16px; top: 14px; display: flex; align-items: center; gap: 16px; }
 .journey-source strong { display: block; font-family: var(--display); font-size: 24px; font-weight: 550; }
 .journey-source span { display: block; margin-top: 3px; font-size: 12px; }
-.journey-exchange { position: absolute; left: 12%; top: 124px; display: flex; align-items: center; gap: 12px; padding: 15px 20px; border-radius: 12px; background: var(--porcelain); }
-.journey-exchange > svg:first-child { width: 28px; height: 30px; }
+.journey-exchange { position: absolute; left: 12%; top: 124px; display: flex; align-items: center; gap: 12px; padding: 15px 20px; border-radius: 12px; background: transparent; box-shadow: 0 10px 24px -12px rgba(0,70,55,.28); }
+.journey-exchange > svg, .journey-exchange > span { position: relative; z-index: 3; }
+.journey-exchange > .journey-mark { width: 28px; height: 30px; }
+.glass-surface-hero .glass-backdrop { background: var(--porcelain); }
+.glass-surface-hero .glass-backdrop svg { filter: blur(8px); opacity: .65; }
 .journey-exchange > span { font-size: 15px; font-weight: 550; }
 .journey-exchange > svg:last-child { margin-left: 14px; }
 .journey-buyer { position: absolute; right: 0; top: 222px; width: 340px; display: grid; grid-template-columns: 26px 1fr; gap: 12px 16px; background: var(--navy); color: white; padding: 23px 26px; border-radius: 16px; }
@@ -56,7 +59,7 @@
   .journey-source strong { font-size: 18px; }
   .journey-source span { font-size: 10px; }
   .journey-exchange { left: 2%; top: 66px; padding: 11px 12px; gap: 8px; }
-  .journey-exchange > svg:first-child { width: 22px; height: 24px; }
+  .journey-exchange > .journey-mark { width: 22px; height: 24px; }
   .journey-exchange > span { font-size: 12px; }
   .journey-exchange > svg:last-child { margin-left: 0; width: 16px; }
   .journey-buyer { top: 119px; width: 250px; padding: 14px 16px; gap: 8px 12px; grid-template-columns: 22px 1fr; border-radius: 12px; }
@@ -68,4 +71,7 @@
   .hero-context { display: block; padding-block: 22px; }
   .hero-context p { font-size: 12px; }
   .hero-context a { margin-top: 8px; font-size: 12px; }
+}
+@media (prefers-reduced-transparency: reduce), (forced-colors: active) {
+  .journey-exchange { background: var(--porcelain); box-shadow: none; }
 }

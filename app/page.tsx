@@ -26,7 +26,7 @@ export default function Home() {
         <figure className="hero-journey" aria-label="Illustrative authorized invoice journey: from a hotel or PMS, through Autally Exchange, to the business buyer’s expense application.">
           <svg className="hero-ribbon" viewBox="0 0 520 430" preserveAspectRatio="none" aria-hidden="true"><path d="M52 98 C52 152 150 110 150 178 C150 235 350 195 350 265" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" pathLength="1" /></svg>
           <div className="journey-source" aria-hidden="true"><Building2 size={30} strokeWidth={1.5} /><div><strong>Hotel / PMS</strong><span>The invoice at its source</span></div></div>
-          <div className="journey-exchange" aria-hidden="true"><BrandMark /><span>Autally Exchange</span><ArrowRight size={20} /></div>
+          <div className="journey-exchange" aria-hidden="true"><GlassSurface variant="hero" /><BrandMark className="journey-mark" /><span>Autally Exchange</span><ArrowRight size={20} /></div>
           <div className="journey-buyer" aria-hidden="true"><ReceiptText size={26} strokeWidth={1.5} /><div><span>For the business buyer</span><strong>The invoice.<br />In their expense app.</strong></div><div className="journey-permission"><ShieldCheck size={15} />With authorized access</div></div>
           <figcaption>Illustrative connection. Network in development.</figcaption>
         </figure>

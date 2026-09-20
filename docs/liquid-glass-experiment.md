@@ -30,6 +30,8 @@ At the founder's request, both backdrops now use Mint Surface (#CCF0E7) and Soft
 
 ## Restrained motion trial
 
+Hero glass trial (after commit `884ff31`): the opening Autally Exchange block now reuses `GlassSurface` with a compact `hero` variant (12px radius, displacement 16, pale blurred backdrop). The logo and label remain ordinary content above the decorative surface. Existing hub/contact settings are preserved. Forced colors and reduced transparency use a solid Porcelain surface. Production build/lint and Chromium desktop/mobile checks passed, including original logo dimensions, no overflow or page errors, and forced-color fallback. This trial is separate from the committed hero baseline.
+
 Accepted glass baseline: `7243f10`. The subsequent motion trial uses native CSS and IntersectionObserver, with no additional dependency. Its styles are isolated in `app/motion.css`.
 
 - The selected network route draws from the provider through Autally to the buyer's application on first arrival. Changing the example replays the drawing; scrolling away and back does not. Desktop paths take 440ms each, with the second starting after 320ms. Mobile connectors use a shorter 300ms drawing with a 220ms offset.

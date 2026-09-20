@@ -4,13 +4,14 @@ import { useEffect, useId, useRef, useState } from "react";
 import { LiquidGlass } from "simple-liquid-glass";
 
 /** Decorative optics only: content and controls remain in the normal DOM above it. */
-export function GlassSurface({ variant }: { variant: "hub" | "contact" }) {
+export function GlassSurface({ variant }: { variant: "hub" | "contact" | "hero" }) {
   const backdrop = useRef<HTMLDivElement>(null);
   const surface = useRef<HTMLDivElement>(null);
   const [arrived, setArrived] = useState(false);
   const [settled, setSettled] = useState(false);
   const gradient = useId().replaceAll(":", "");
-  const hub = variant === "hub";
+  const hub = variant !== "contact";
+  const compact = variant === "hero";
   useEffect(() => {
     if (hub || !surface.current || !("IntersectionObserver" in window)) return;
     const observer = new IntersectionObserver(([entry]) => {
@@ -35,7 +36,7 @@ export function GlassSurface({ variant }: { variant: "hub" | "contact" }) {
       </svg>
     </div>
     <LiquidGlass className="glass-optic" backdropRef={backdrop} renderer="auto"
-      radius={hub ? 24 : 32} refraction="lens" lensProfile="material" displacementScale={hub ? 32 : 24}
+      radius={compact ? 12 : hub ? 24 : 32} refraction="lens" lensProfile="material" displacementScale={compact ? 16 : hub ? 32 : 24}
       frost={hub ? 0.25 : 0.12} blur={hub ? 4 : 1.5} saturation={100} quality="low" aberrationIntensity={0}
       glassColor={hub ? "rgba(255,255,255,0.55)" : "rgba(255,255,255,0.42)"}
       borderColor="rgba(255,255,255,0.85)" style={{ width: "100%", height: "100%", position: "absolute", inset: 0 }} />
