@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Building2, ReceiptText, Calculator, WalletCards, ShieldCheck, ArrowRight, type LucideIcon } from "lucide-react";
 import { BrandMark } from "./brand";
+import { GlassSurface } from "./glass-surface";
 
 const sources: [string, LucideIcon][] = [["Hotel / PMS", Building2], ["POS systems", ReceiptText], ["Receipt apps", ReceiptText]];
 const applications: [string, LucideIcon][] = [["Expense apps", WalletCards], ["Accounting", Calculator], ["Receipt apps", ReceiptText]];
@@ -24,7 +25,7 @@ export function HeroNetwork() {
     <div className="map-canvas" role="img" aria-label={`${sources[route.source][0]} connects through Autally Exchange to ${applications[route.destination][0]}. ${route.description} Sources remain in control.`}>
       <svg className="map-wires" viewBox="0 0 1000 300" preserveAspectRatio="none" aria-hidden="true"><g fill="none" stroke="var(--line)" strokeWidth="1.2">{positions.map(y => <path key={`left${y}`} d={leftPath(y)} />)}{positions.map(y => <path key={`right${y}`} d={rightPath(y)} />)}</g><g key={selected} className="selected-route" fill="none" stroke="var(--mint)" strokeWidth="3"><path d={leftPath(positions[route.source])} /><path d={rightPath(positions[route.destination])} /></g></svg>
       <div className="map-nodes map-sources" aria-hidden="true">{sources.map(([label, Icon], i) => <div className={`network-node map-node ${route.source === i ? "is-connected" : ""}`} key={label}><Icon size={19} strokeWidth={1.5} /><span>{label}</span><span className="map-port" /></div>)}</div>
-      <div className="map-hub" aria-hidden="true"><BrandMark /><strong>Autally</strong><span>Exchange</span><ShieldCheck size={17} className="hub-permission" /></div>
+      <div className="map-hub liquid-hub" aria-hidden="true"><GlassSurface variant="hub" /><BrandMark /><strong>Autally</strong><span>Exchange</span><ShieldCheck size={17} className="hub-permission" /></div>
       <div className="map-nodes map-applications" aria-hidden="true">{applications.map(([label, Icon], i) => <div className={`network-node map-node ${route.destination === i ? "is-connected" : ""}`} key={label}><Icon size={19} strokeWidth={1.5} /><span>{label}</span><span className="map-port" /></div>)}</div>
     </div>
     <div className="route-explanation" aria-live="polite"><span>For the business buyer</span><p>{route.description}</p></div>

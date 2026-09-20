@@ -1,0 +1,26 @@
+/* Isolated experiment; pre-glass restore point: 3f8a7ef. */
+.glass-surface { position: absolute; inset: 0; pointer-events: none; border-radius: inherit; overflow: hidden; }
+.glass-backdrop { position: absolute; inset: 0; background: var(--soft-mint); }
+.glass-backdrop svg { display: block; width: 100%; height: 100%; }
+.glass-optic { z-index: 1; }
+.glass-shine { position: absolute; z-index: 2; inset: 0; border-radius: inherit; box-shadow: inset 0 2px 2px rgba(255,255,255,.95), inset 1px 0 1px rgba(255,255,255,.7), inset 0 -2px 3px rgba(24,114,94,.14); background: linear-gradient(125deg, rgba(255,255,255,.5), transparent 35%, rgba(255,255,255,.06) 70%, rgba(255,255,255,.36)); }
+.liquid-hub.map-hub { background: transparent; border: 0; border-radius: 24px; box-shadow: 0 12px 30px -12px rgba(0,70,55,.25); }
+.liquid-hub > svg, .liquid-hub > strong, .liquid-hub > span { position: relative; z-index: 3; }
+.liquid-hub > svg:not(.hub-permission) { width: 37px; height: 40px; margin-bottom: 9px; }
+.liquid-hub > .hub-permission { position: absolute; }
+.glass-surface-hub .glass-backdrop { background: var(--porcelain); }
+.glass-surface-hub .glass-backdrop svg { filter: blur(10px); opacity: .65; }
+.glass-surface-contact .glass-backdrop svg { filter: blur(5px); }
+.liquid-contact.pilot-section { position: relative; isolation: isolate; background: transparent; border: 0; border-radius: 32px; box-shadow: 0 24px 60px -32px rgba(0,75,54,.3); }
+.liquid-contact > .pilot-content, .liquid-contact > .pilot-details { position: relative; z-index: 3; }
+.liquid-contact.pilot-section .pilot-content > p, .liquid-contact.pilot-section .pilot-details p, .liquid-contact.pilot-section .pilot-button-note { color: var(--navy); }
+.liquid-contact .pilot-details { border-color: rgba(25,91,73,.22); }
+.liquid-contact .vision-promise { border-color: rgba(25,91,73,.22) !important; }
+@media (max-width: 799px) {
+  .glass-surface-contact .glass-backdrop svg { width: 100%; height: 100%; }
+  .liquid-contact .glass-backdrop { background: var(--soft-mint); }
+}
+@media (prefers-reduced-transparency: reduce), (forced-colors: active) {
+  .glass-surface { display: none; }
+  .liquid-hub.map-hub, .liquid-contact.pilot-section { background: var(--mint-surface); box-shadow: none; }
+}

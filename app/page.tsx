@@ -3,6 +3,7 @@ import { Header } from "@/components/header";
 import { Brand } from "@/components/brand";
 import { HeroNetwork } from "@/components/hero-network";
 import { PilotContact, contactHref } from "@/components/pilot-contact";
+import { GlassSurface } from "@/components/glass-surface";
 
 function CTA() {
   return <a className="button button-primary" href={contactHref}>Express interest in joining<ArrowUpRight size={17} aria-hidden="true" /></a>;
@@ -66,11 +67,12 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="pilot" className="pilot-section container" aria-labelledby="join-title">
+      <section id="pilot" className="pilot-section container liquid-contact" aria-labelledby="join-title">
+        <GlassSurface variant="contact" />
         <div className="pilot-content"><h2 id="join-title">Help shape the first connections.</h2><p>Hold hotel invoices or business-travel receipts? We’d like to hear from you. Applications that need this data are welcome too.</p><PilotContact /></div>
         <div className="pilot-details"><h3>Starting with travel.<br />Built for more.</h3><p>Our longer-term vision is a common commerce data network: businesses and their software can request purchase information directly from authorized sources, across industries.</p><p className="vision-promise">Business travel is the starting point. Better access for business buyers is the purpose.</p></div>
       </section>
     </main>
-    <footer className="site-footer container"><Brand footer /><p>Autally Exchange — Connecting commerce data.</p><div className="footer-links"><a href="https://www.linkedin.com/company/autally" aria-label="Autally on LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 2H3.55A1.55 1.55 0 0 0 2 3.55v16.9A1.55 1.55 0 0 0 3.55 22h16.9A1.55 1.55 0 0 0 22 20.45V3.55A1.55 1.55 0 0 0 20.45 2ZM8 19H5V9h3ZM6.5 7.7a1.75 1.75 0 1 1 0-3.5 1.75 1.75 0 0 1 0 3.5ZM19 19h-3v-5.3c0-1.3-.5-2-1.5-2-1.1 0-1.7.8-1.7 2V19h-3V9h2.9v1.4A3.2 3.2 0 0 1 15.5 9c2.3 0 3.5 1.4 3.5 4.2Z" /></svg><span>LinkedIn</span></a><a href="#top">Back to top<ArrowUpRight size={14} aria-hidden="true" /></a></div></footer>
+    <footer className="site-footer container"><Brand footer /><p>Autally Exchange — Connecting commerce data.</p><div className="footer-links"><a href="https://www.linkedin.com/company/autally" target="_blank" rel="noopener noreferrer" aria-label="Autally on LinkedIn (opens in a new tab)"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 2H3.55A1.55 1.55 0 0 0 2 3.55v16.9A1.55 1.55 0 0 0 3.55 22h16.9A1.55 1.55 0 0 0 22 20.45V3.55A1.55 1.55 0 0 0 20.45 2ZM8 19H5V9h3ZM6.5 7.7a1.75 1.75 0 1 1 0-3.5 1.75 1.75 0 0 1 0 3.5ZM19 19h-3v-5.3c0-1.3-.5-2-1.5-2-1.1 0-1.7.8-1.7 2V19h-3V9h2.9v1.4A3.2 3.2 0 0 1 15.5 9c2.3 0 3.5 1.4 3.5 4.2Z" /></svg><span>LinkedIn</span></a><a href="#top">Back to top<ArrowUpRight size={14} aria-hidden="true" /></a></div></footer>
   </>;
 }
