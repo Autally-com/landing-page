@@ -5,7 +5,7 @@ export const contactHref = `mailto:${contactEmail}?subject=${encodeURIComponent(
 
 export function PilotContact() {
   return <div className="pilot-contact">
-    <a className="button button-primary" href={contactHref}>Email Tomas<Mail size={18} aria-hidden="true" /></a>
+    <a className="button button-primary" href={contactHref}>Get in touch<Mail size={18} aria-hidden="true" /></a>
     <p className="pilot-button-note">{contactEmail}</p>
   </div>;
 }

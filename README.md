@@ -48,7 +48,7 @@ Current verification records, source hashes, and screenshots live in `.agent-tea
 
 The supplied `autally-exchange-landing-page-codex.md` and `design.md` remain unchanged. The founder's subsequently approved content direction supersedes the original page structure: five sections focus on hotel invoices, business travel, and business buyers. Providers include hotels, PMS, POS, and receipt platforms. Compensation is an exploratory possibility; the broader commerce-data vision is retained. Illustrative transaction data is labeled as such; no live network or partner claims are made.
 
-All interest links open an email addressed to tomas@autally.com with the subject Interest in Autally Exchange. The closing action says Email Tomas and displays the address. The footer links to the Autally LinkedIn company page. The website does not send the email or collect form data.
+All interest links open an email addressed to tomas@autally.com with the subject Interest in Autally Exchange. The closing action says Get in touch and displays the address. The footer links to the Autally LinkedIn company page. The website does not send the email or collect form data.
 
 The page has not been deployed. No third-party analytics, cookie storage, or data collection is included.
 

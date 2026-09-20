@@ -1,0 +1,50 @@
+/* Product motion: explain the selected exchange, then add a quiet glass depth cue. */
+.selected-route path { stroke-dasharray: 1; stroke-dashoffset: 0; }
+.mobile-route { display: none; }
+
+@media (prefers-reduced-motion: no-preference) and (min-width: 800px) {
+  [data-route-revealed="true"] .selected-route path {
+    animation: exchange-route-draw 440ms cubic-bezier(.16, 1, .3, 1) both;
+  }
+  [data-route-revealed="true"] .selected-route .route-out { animation-delay: 320ms; }
+}
+@keyframes exchange-route-draw {
+  from { stroke-dashoffset: 1; }
+  to { stroke-dashoffset: 0; }
+}
+
+@media (max-width: 799px) {
+  .map-hub::before, .map-hub::after { display: none; }
+  .liquid-hub > .mobile-route {
+    display: block; position: absolute; left: 50%; width: 2px; height: 28px;
+    background: var(--mint); transform-origin: top; z-index: 0;
+  }
+  .mobile-route.route-in { bottom: 100%; }
+  .mobile-route.route-out { top: 100%; }
+}
+@media (prefers-reduced-motion: no-preference) and (max-width: 799px) {
+  [data-route-revealed="true"] .mobile-route { animation: exchange-route-vertical 300ms ease-out both; }
+  [data-route-revealed="true"] .mobile-route.route-out { animation-delay: 220ms; }
+}
+@keyframes exchange-route-vertical {
+  from { transform: scaleY(0); }
+  to { transform: scaleY(1); }
+}
+
+/* One visible ribbon sweep on arrival, with stationary content and glass edges.
+   Snapshot-based WebGL surfaces retain their complete static backdrop. */
+@media (prefers-reduced-motion: no-preference) {
+  .glass-surface-contact[data-arrived="true"][data-settled="false"]:has(.glass-optic[data-glass-strategy="svg"], .glass-optic[data-glass-strategy="css"]) .glass-backdrop svg {
+    animation: contact-ribbon-arrival 2400ms cubic-bezier(.22, .61, .36, 1) both;
+  }
+}
+@keyframes contact-ribbon-arrival {
+  from { transform: translate(-22%, 18%) scale(1.5); }
+  to { transform: translate(0, 0) scale(1); }
+}
+@media (max-width: 799px) {
+  @keyframes contact-ribbon-arrival {
+    from { transform: translate(-14%, 12%) scale(1.3); }
+    to { transform: translate(0, 0) scale(1); }
+  }
+}

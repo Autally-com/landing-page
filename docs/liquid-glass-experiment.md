@@ -28,3 +28,15 @@ Review images are in `.impeccable/review/glass-*.png` (local artifacts excluded 
 
 At the founder's request, both backdrops now use Mint Surface (#CCF0E7) and Soft Mint (#EEFBF6), with Porcelain behind the hub. The hub has stronger frosting and background blur, and its fine ribbon highlight was removed so the original logo's mint stroke remains distinct. The contact ribbon is also lighter and softly blurred. The logo itself is unchanged. Production build/lint passed, and both surfaces were visually checked at 1440px and 390px without overflow.
 
+## Restrained motion trial
+
+Accepted glass baseline: `7243f10`. The subsequent motion trial uses native CSS and IntersectionObserver, with no additional dependency. Its styles are isolated in `app/motion.css`.
+
+- The selected network route draws from the provider through Autally to the buyer's application on first arrival. Changing the example replays the drawing; scrolling away and back does not. Desktop paths take 440ms each, with the second starting after 320ms. Mobile connectors use a shorter 300ms drawing with a 220ms offset.
+- The contact panel's mint ribbon plays a 2.4-second sweep when 35% of its surface first enters view, then settles into its original position. The initial scroll-linked versions were not perceptible enough for the founder, so they were replaced with this timed arrival. Desktop starts at a -22% horizontal/+18% vertical offset and 1.5 scale; mobile uses -14%/+12% and 1.3 scale. Text, logo, controls, and glass edges stay stationary. A completed-state flag prevents renderer changes from replaying a finished sweep.
+- Reduced-motion preferences leave all paths and backgrounds static. Glass surfaces using the WebGL snapshot renderer retain the static backdrop. Content remains visible without animation or IntersectionObserver support.
+
+Production build and lint passed. Chromium checks confirmed the first-view sequence, example changes, no replay on re-entry, stationary text/logo, reduced-motion behavior, and no runtime errors. Keyboard selection passed for all three routes at desktop/mobile sizes. No horizontal overflow at 320/390/768/1024/1440/1920px. Desktop/mobile screenshots were visually reviewed; other browser engines have not been independently tested. Local verification artifacts are in `.agent-team/runs/motion/` (excluded from Git).
+
+The final contact arrival passed focused checks at 1440/709/390px: live playback, fixed text, completion without replay, static reduced-motion styling, no overflow, and no runtime errors. Rendered start/end frames were compared, and completion was confirmed in the in-app browser. `verify-contact-arrival.js` supersedes the contact-parallax assertions in the earlier `verify-motion.js` trial.
+

@@ -1,16 +1,32 @@
 "use client";
 
-import { useId, useRef } from "react";
+import { useEffect, useId, useRef, useState } from "react";
 import { LiquidGlass } from "simple-liquid-glass";
 
 /** Decorative optics only: content and controls remain in the normal DOM above it. */
 export function GlassSurface({ variant }: { variant: "hub" | "contact" }) {
   const backdrop = useRef<HTMLDivElement>(null);
+  const surface = useRef<HTMLDivElement>(null);
+  const [arrived, setArrived] = useState(false);
+  const [settled, setSettled] = useState(false);
   const gradient = useId().replaceAll(":", "");
   const hub = variant === "hub";
-  return <div className={`glass-surface glass-surface-${variant}`} aria-hidden="true">
+  useEffect(() => {
+    if (hub || !surface.current || !("IntersectionObserver" in window)) return;
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        setArrived(true);
+        observer.disconnect();
+      }
+    }, { threshold: 0.35 });
+    observer.observe(surface.current);
+    return () => observer.disconnect();
+  }, [hub]);
+  return <div ref={surface} className={`glass-surface glass-surface-${variant}`} data-arrived={arrived} data-settled={settled} aria-hidden="true">
     <div className="glass-backdrop" ref={backdrop}>
-      <svg viewBox="0 0 1000 500" preserveAspectRatio="xMidYMid slice">
+      <svg viewBox="0 0 1000 500" preserveAspectRatio="xMidYMid slice" onAnimationEnd={event => {
+        if (event.animationName === "contact-ribbon-arrival") setSettled(true);
+      }}>
         <defs>
           <linearGradient id={gradient} x1="0" y1="0" x2="1" y2="1"><stop stopColor="#eefbf6" /><stop offset=".38" stopColor="#ccf0e7" /><stop offset=".72" stopColor="#ccf0e7" /><stop offset="1" stopColor="#eefbf6" /></linearGradient>
         </defs>

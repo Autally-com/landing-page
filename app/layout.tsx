@@ -6,6 +6,7 @@ import "@fontsource/ibm-plex-mono/latin-500.css";
 import "./globals.css";
 import "./refinement.css";
 import "./liquid-glass.css";
+import "./motion.css";
 
 export const metadata: Metadata = {
   title: "Autally Exchange — Hotel Invoices for Business Buyers",

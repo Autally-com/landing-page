@@ -49,8 +49,6 @@ h2 { font-size: clamp(34px, 3.5vw, 48px); line-height: 1.12; letter-spacing: -.0
 .map-hub strong { font-family: var(--display); font-size: 24px; font-weight: 550; line-height: 1.2; }
 .map-hub > span { font-size: 12px; }
 .hub-permission { position: absolute; bottom: -15px; background: white; padding: 5px; width: 30px; height: 30px; border-radius: 50%; color: #08745c; border: 1px solid #a7d9cb; }
-.selected-route { animation: route-arrival 400ms ease-out; }
-@keyframes route-arrival { from { opacity: .25; } to { opacity: 1; } }
 .route-explanation { display: flex; gap: 18px; align-items: baseline; padding: 16px 26px; background: var(--soft-mint); border-top: 1px solid var(--line); font-size: 13px; }
 .route-explanation > span { min-width: 95px; font-weight: 550; }
 .route-explanation p { color: var(--navy); }
@@ -306,7 +304,6 @@ h2 { font-size: clamp(34px, 3.5vw, 48px); line-height: 1.12; letter-spacing: -.0
   .site-footer p { font-size: 11px; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .selected-route { animation: none; }
   .button:hover svg, .text-link:hover svg { transform: none; }
 }
 

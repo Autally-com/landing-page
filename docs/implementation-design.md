@@ -28,4 +28,4 @@ The current scripts, screenshots, and source manifest are in .agent-team/runs/tr
 
 ## Contact update
 
-The founder supplied tomas@autally.com. All interest CTAs now open an email with a prefilled subject; the closing action says Email Tomas and displays the address. The previous inquiry-copy disclosure was removed. The footer includes a LinkedIn icon and link to https://www.linkedin.com/company/autally. Earlier clipboard/disclosure verification is historical and no longer applies to this flow. Liquid-glass treatment is being discussed and has not been implemented.
+The founder supplied tomas@autally.com. All interest CTAs now open an email with a prefilled subject; the closing action says Get in touch and displays the address. The previous inquiry-copy disclosure was removed. The footer includes a LinkedIn icon and link to https://www.linkedin.com/company/autally. Earlier clipboard/disclosure verification is historical and no longer applies to this flow. Liquid-glass treatment is being discussed and has not been implemented.
