@@ -22,6 +22,25 @@ npm run lint
 npm start
 ```
 
+## Deploy to GitHub Pages
+
+This repository is configured for static Next.js export and GitHub Pages deployment via `.github/workflows/deploy-pages.yml`.
+
+1. In GitHub, open **Settings → Pages** for this repository.
+2. Set **Source** to **GitHub Actions**.
+3. Push to `master` (or run the workflow manually from the Actions tab).
+
+The workflow builds with Node.js 22, runs `npm ci` + `npm run build`, uploads `out/`, and deploys with `actions/deploy-pages`.
+
+Expected Pages URL for this repository:
+
+- https://autally-com.github.io/landing-page/
+
+Notes:
+
+- The workflow prepares deployment; it does not guarantee Pages is enabled in repository settings.
+- GitHub Pages for private repositories depends on your GitHub plan (for example, GitHub Pro/Team/Enterprise support it). Public repositories can use Pages without a paid plan.
+
 ## Browser verification
 
 The project includes the requested Playwright CLI as a pinned development dependency. No global install is required.
@@ -55,4 +74,3 @@ The page has not been deployed. No third-party analytics, cookie storage, or dat
 ## Design resources
 
 See `docs/design-resources/README.md` for the installed Taste, Impeccable, Vercel, Awesome DESIGN.md reference, their sources and their application to Autally's brand.
-
