@@ -1,8 +1,7 @@
 import type { NextConfig } from "next";
+import { resolveBasePath } from "./scripts/base-path.mjs";
 
-const repositoryName = process.env.GITHUB_REPOSITORY?.split("/")[1];
-const useGitHubPagesPath = process.env.NODE_ENV === "production" && Boolean(repositoryName);
-const basePath = useGitHubPagesPath ? `/${repositoryName}` : "";
+const basePath = resolveBasePath(process.env);
 
 const nextConfig: NextConfig = {
   poweredByHeader: false,
