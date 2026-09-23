@@ -1,0 +1,83 @@
+/* Continuous exchange: quiet connections, visible packets, stable labels. */
+.flow-toolbar { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 16px 26px; border-bottom: 1px solid var(--line); }
+.flow-toolbar > span { font-size: 14px; font-weight: 550; }
+.flow-labels { display: flex; justify-content: space-between; gap: 24px; padding: 24px 32px 12px; font-size: 12px; color: var(--secondary); }
+.flow-stage { position: relative; isolation: isolate; display: grid; grid-template-columns: 25% 15% 25%; justify-content: space-between; align-items: center; min-height: 372px; margin: 0 32px 28px; }
+.flow-wires { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; pointer-events: none; }
+.flow-lines { fill: none; stroke: #c4dfd7; stroke-width: 1.5; }
+.flow-nodes { position: relative; z-index: 1; display: grid; gap: 12px; }
+.flow-node { display: flex; align-items: center; gap: 12px; min-height: 62px; padding: 10px 14px; border: 1px solid var(--line); border-radius: 8px; background: var(--porcelain); color: var(--navy); font-size: 14px; line-height: 1.35; }
+.flow-node > svg { flex-shrink: 0; color: #08745c; }
+.flow-node small { display: block; font-size: 11px; margin-top: 3px; color: var(--secondary); }
+.flow-sources .flow-node:first-child { background: var(--soft-mint); border-color: #79b9a8; }
+.flow-stage .map-hub { min-width: 0; width: 100%; }
+.flow-stage .map-hub::before, .flow-stage .map-hub::after { display: none; }
+.flow-applications { gap: 28px; }
+.continuous-exchange figcaption { font-size: 12px; line-height: 1.6; }
+.flow-benefits { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; padding: 28px 32px; background: var(--soft-mint); border-top: 1px solid var(--line); }
+.flow-benefits h3 { font-size: 19px; line-height: 1.3; margin-bottom: 12px; letter-spacing: -.015em; }
+.flow-benefits p { font-size: 14px; line-height: 1.7; color: var(--navy); }
+.flow-benefits strong { display: block; font-weight: 550; margin-bottom: 4px; }
+@media (max-width: 1099px) and (min-width: 800px) {
+  .flow-stage { grid-template-columns: 28% 18% 26%; margin-inline: 24px; }
+  .flow-node { font-size: 12px; padding-inline: 10px; gap: 8px; }
+  .flow-labels { padding-inline: 24px; }
+}
+@media (max-width: 799px) {
+  .flow-toolbar { padding: 12px 16px; gap: 12px; }
+  .flow-toolbar > span { font-size: 13px; }
+  .flow-benefits { grid-template-columns: 1fr; gap: 24px; padding: 24px 22px; }
+  .flow-benefits h3 { margin-bottom: 8px; }
+  .flow-labels { display: none; }
+  .flow-stage { grid-template-columns: 1fr; justify-items: center; gap: 64px; margin: 24px 20px; }
+  .flow-nodes { width: 100%; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .flow-nodes::before { grid-column: 1 / -1; font-size: 12px; color: var(--secondary); padding-bottom: 4px; }
+  .flow-sources::before { content: "Businesses with the data"; }
+  .flow-applications::before { content: "The company’s applications"; }
+  .flow-node { min-height: 60px; padding: 10px; gap: 8px; font-size: 12px; }
+  .flow-node > svg { width: 16px; }
+  .flow-node:last-child:nth-child(odd) { grid-column: 1 / -1; }
+  .flow-stage .map-hub { width: 144px; min-height: 145px; }
+  .flow-applications::before { background: white; position: relative; z-index: 1; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .flow-packet { display: none; }
+}
+
+/* Contact has two clear paths: LinkedIn, or a composed email. */
+.liquid-contact.pilot-section { grid-template-columns: .9fr 1.1fr; gap: 48px; padding: 56px; align-items: start; scroll-margin-top: 100px; }
+.liquid-contact .pilot-content { padding-top: 12px; }
+.liquid-contact .pilot-content h2 { font-size: clamp(32px, 3.3vw, 48px); text-wrap: balance; }
+.liquid-contact .pilot-content > p { max-width: 40ch; }
+.liquid-contact .pilot-details { padding-left: 40px; min-width: 0; }
+.pilot-contact .button { gap: 10px; }
+.pilot-contact .pilot-button-note { font-size: 12px; line-height: 1.7; }
+.pilot-button-note a { text-decoration: underline; text-underline-offset: 3px; }
+.contact-form h3 { font-size: 27px; line-height: 1.2; letter-spacing: -.025em; text-wrap: balance; }
+.pilot-details .contact-form-intro { margin: 12px 0 24px; font-size: 14px; line-height: 1.65; }
+.contact-fields { display: grid; grid-template-columns: 1fr 1fr; gap: 18px 16px; }
+.contact-fields label { display: block; color: var(--navy); font-size: 13px; font-weight: 550; }
+.contact-fields label > span { font-size: 12px; font-weight: 400; color: #365b50; }
+.contact-fields input, .contact-fields textarea { display: block; width: 100%; min-width: 0; margin-top: 7px; border: 1px solid #9dbfb4; border-radius: 8px; padding: 11px 12px; background: rgba(255,255,255,.88); color: var(--navy); font-family: inherit; font-size: 16px; font-weight: 400; line-height: 1.45; caret-color: #08745c; }
+.contact-fields input { min-height: 46px; }
+.contact-fields textarea { min-height: 124px; resize: vertical; }
+.contact-fields :is(input,textarea)::placeholder { color: #536b67; opacity: 1; font-size: 13px; }
+.contact-fields :is(input,textarea):focus-visible { outline: 2px solid #08745c; outline-offset: 3px; border-color: #08745c; }
+.contact-fields :is(input,textarea):user-invalid { border-color: #9f3434; }
+.contact-message { grid-column: 1 / -1; }
+.pilot-details .contact-form-note { margin: 16px 0; font-size: 12px; line-height: 1.6; }
+.contact-form-actions { display: flex; flex-wrap: wrap; gap: 12px 18px; align-items: center; }
+.copy-message { display: inline-flex; align-items: center; gap: 7px; padding: 8px 0; min-height: 44px; color: var(--navy); background: none; border: none; font: inherit; font-size: 12px; cursor: pointer; text-decoration: underline; text-underline-offset: 3px; }
+.pilot-details .contact-status { font-size: 13px; line-height: 1.6; margin-top: 12px; }
+.contact-status:empty { display: none; }
+@media (max-width: 1099px) {
+  .liquid-contact.pilot-section { gap: 32px; padding: 40px; }
+  .liquid-contact .pilot-details { padding-left: 28px; }
+  .contact-fields { grid-template-columns: 1fr; gap: 16px; }
+}
+@media (max-width: 799px) {
+  .liquid-contact.pilot-section { grid-template-columns: 1fr; padding: 32px 24px; }
+  .liquid-contact .pilot-content { padding-top: 0; }
+  .liquid-contact .pilot-details { padding: 30px 0 0; }
+  .contact-form h3 { font-size: 25px; }
+}

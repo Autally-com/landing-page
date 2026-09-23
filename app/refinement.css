@@ -146,7 +146,7 @@ h2 { font-size: clamp(34px, 3.5vw, 48px); line-height: 1.12; letter-spacing: -.0
 .pilot-section { padding: 64px; gap: 64px; grid-template-columns: 1.3fr 1fr; }
 .pilot-label { display: none; }
 .pilot-content h2 { font-size: 54px; }
-.pilot-content > p:not(.pilot-label), .pilot-details p { font-size: 15px; }
+.pilot-content > p:not(.pilot-label), .pilot-details p { font-size: 16px; }
 .pilot-details h4 { font-size: 20px; }
 .pilot-content blockquote { font-size: 23px; line-height: 1.5; }
 .pilot-button-note { font-size: 12px; }
@@ -324,13 +324,13 @@ h2 { font-size: clamp(34px, 3.5vw, 48px); line-height: 1.12; letter-spacing: -.0
 .focused-page .evidence-total > span { max-width: 220px; }
 .buyer-outcome { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; padding-top: 32px; margin-top: 32px; border-top: 1px solid var(--line); }
 .buyer-outcome h3 { font-size: 27px; }
-.buyer-outcome p { font-size: 15px; }
+.buyer-outcome p { font-size: 16px; }
 .provider-section { background: white; border-block: 1px solid var(--line); }
 .provider-benefits { display: grid; grid-template-columns: 1fr 1fr 1.15fr; gap: 40px; }
 .provider-benefits article { padding-top: 28px; border-top: 1px solid var(--line); }
 .provider-benefits article > svg { color: #08745c; margin-bottom: 22px; }
 .provider-benefits h3 { font-size: 26px; max-width: 280px; margin-bottom: 14px; }
-.provider-benefits p { font-size: 15px; line-height: 1.8; }
+.provider-benefits p { font-size: 16px; line-height: 1.7; }
 .provider-benefits article:last-child { padding: 28px; border: 1px solid #c4d9d0; border-radius: 12px; background: var(--soft-mint); }
 .focused-page .map-canvas { height: 240px; }
 .focused-page .map-nodes { grid-template-rows: repeat(3, 1fr); }
@@ -342,7 +342,7 @@ h2 { font-size: clamp(34px, 3.5vw, 48px); line-height: 1.12; letter-spacing: -.0
 .network-questions summary::-webkit-details-marker { display: none; }
 .network-questions summary > span { font-size: 26px; font-weight: 400; color: #08745c; }
 .network-questions details[open] summary > span { transform: rotate(45deg); }
-.network-questions details > p { max-width: 850px; padding-bottom: 26px; font-size: 15px; line-height: 1.8; }
+.network-questions details > p { max-width: 68ch; padding-bottom: 26px; font-size: 16px; line-height: 1.7; }
 .focused-page .pilot-section { margin-bottom: 64px; }
 .focused-page .pilot-contact { margin-top: 28px; }
 .focused-page .pilot-details > h3 { font-size: 30px; line-height: 1.25; margin-bottom: 24px; }
@@ -364,7 +364,7 @@ h2 { font-size: clamp(34px, 3.5vw, 48px); line-height: 1.12; letter-spacing: -.0
   .focused-page .map-canvas { height: auto; }
   .focused-page .map-nodes { grid-template-rows: auto; }
   .focused-page .map-sources::before { content: "Data providers"; }
-  .focused-page .map-applications::before { content: "The business buyer’s applications"; }
+  .focused-page .map-applications::before { content: "The company’s applications"; }
   .focused-page .map-hub { min-height: 120px; }
   .focused-page .route-picker button { gap: 7px; }
   .focused-page .pilot-section { margin-bottom: 40px; }

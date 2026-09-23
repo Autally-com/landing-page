@@ -113,13 +113,21 @@ npx --no-install playwright-cli -s=autally screenshot --filename=mobile.png --fu
 npx --no-install playwright-cli -s=autally close
 ```
 
-Check the logo and favicon, switch the illustrative network examples, open the FAQs, and verify the contact and LinkedIn links. Respect the reduced-motion setting when checking animations. Deployment-path regression tests are available with `npm test`.
+Check the logo and favicon, watch the illustrative network packets, read the three benefits below the diagram, open the FAQs, and verify the contact and LinkedIn links. There is no animation switch or pause/resume button. Packets should stop offscreen, in a hidden tab, and when reduced motion is enabled. Test the contact form's required fields and inspect the prepared email draft without sending test messages. Deployment-path regression tests are available with `npm test`.
 
 ## Content and contact behavior
 
 The supplied `autally-exchange-landing-page-codex.md` and `design.md` remain unchanged. The founder's subsequently approved content direction supersedes the original page structure: five sections focus on hotel invoices, business travel, and business buyers. Providers include hotels, PMS, POS, and receipt platforms. Compensation is an exploratory possibility; the broader commerce-data vision is retained. Illustrative transaction data is labeled as such; no live network or partner claims are made.
 
-All interest links open an email addressed to tomas@autally.com with the subject Interest in Autally Exchange. The closing action says Get in touch and displays the address. The footer links to the Autally LinkedIn company page. The website does not send the email or collect form data.
+The header and hero **Explore a pilot** links scroll to the closing contact card. Its left side offers **Contact on LinkedIn**, opening the Autally company page in a new tab, plus a direct email alternative.
+
+The right side contains name, email, company (optional), phone (optional), and message fields. **Prepare email** validates the fields and creates an encoded draft addressed to tomas@autally.com with the subject **Autally pilot enquiry**. **Open email draft** opens the visitor's email app; they must send the message there. **Copy message** provides an alternative for visitors using webmail. Editing a field clears the previous draft so stale details cannot be sent. Values stay in browser memory; the website does not submit them to a server or save them in storage. Without JavaScript, the form has a mailto fallback and a direct contact link.
+
+GitHub Pages hosts static files and provides no contact-form backend. Direct in-page sending would require connecting a form service or a separate backend. No such service is configured, and the interface does not claim a message has been sent.
+
+See [Contact form options](docs/contact-form-options.md) for the reference-repository findings, Zoho Forms versus Formspree, and the setup needed for direct submission.
+
+The exchange diagram shows fictional example businesses (hotel, restaurants, supermarket and supplier) sending illustrative packets through Autally to financial applications. Paths are measured from the actual layout, including the stacked mobile layout. At most three packets animate at a time, with randomized routes and timings. The central Autally mark and application destinations retain their existing presentation.
 
 No third-party analytics, cookie storage, or data collection is included. A successful local build does not confirm that a hosted deployment is live; check the GitHub workflow and public URL after launch.
 
