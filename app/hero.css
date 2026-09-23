@@ -32,10 +32,11 @@
 .journey-buyer > svg { color: var(--mint); margin-top: 3px; }
 .journey-buyer > div > span { display: block; font-size: 11px; color: var(--mint-surface); margin-bottom: 8px; }
 .journey-buyer strong { font-family: var(--display); font-size: 23px; line-height: 1.18; font-weight: 500; }
-.journey-permission { grid-column: 2; display: flex; align-items: center; gap: 7px; font-size: 10px; color: var(--mint-surface); }
+.journey-permission { grid-column: 2; display: flex; align-items: center; gap: 7px; font-size: 11px; color: var(--mint-surface); }
 .hero-journey figcaption { position: absolute; bottom: -19px; right: 0; font-size: 11px; color: var(--navy); }
-.hero-context { display: flex; align-items: center; justify-content: space-between; gap: 40px; padding-block: 25px; border-bottom: 1px solid var(--line); }
-.hero-context p { max-width: 760px; font-size: 13px; line-height: 1.7; }
+.hero-context { display: flex; align-items: center; justify-content: space-between; gap: 40px; padding-block: 32px; border-bottom: 1px solid var(--line); }
+.hero-context h2 { font-size: clamp(22px, 2.1vw, 28px); line-height: 1.2; letter-spacing: -.025em; margin-bottom: 10px; text-wrap: balance; }
+.hero-context p { max-width: 68ch; font-size: 16px; line-height: 1.65; }
 .hero-context a { flex-shrink: 0; }
 @media (max-width: 1199px) and (min-width: 800px) {
   .hero-layout { gap: 32px; grid-template-columns: 1.1fr 1fr; }
@@ -50,14 +51,14 @@
   .hero-layout { grid-template-columns: 1fr; gap: 34px; }
   .focused-page .mint-hero h1 { font-size: clamp(36px, 8.9vw, 54px); max-width: 620px; }
   .focused-page .mint-hero .hero-intro { margin-top: 18px; }
-  .mint-hero .hero-lead { font-size: 15px; line-height: 1.65; max-width: 540px; }
+  .mint-hero .hero-lead { font-size: 16px; line-height: 1.65; max-width: 540px; }
   .focused-page .mint-hero .hero-actions { margin-top: 20px; gap: 4px 20px; }
   .hero-journey { height: 274px; max-width: 540px; width: 100%; margin-inline: auto; }
   .hero-ribbon { width: 115%; height: 245px; left: -5%; top: -12px; }
   .journey-source { top: 0; left: 0; gap: 10px; }
   .journey-source > svg { width: 23px; }
   .journey-source strong { font-size: 18px; }
-  .journey-source span { font-size: 10px; }
+  .journey-source span { font-size: 12px; }
   .journey-exchange { left: 2%; top: 66px; padding: 11px 12px; gap: 8px; }
   .journey-exchange > .journey-mark { width: 22px; height: 24px; }
   .journey-exchange > span { font-size: 12px; }
@@ -65,12 +66,11 @@
   .journey-buyer { top: 119px; width: 250px; padding: 14px 16px; gap: 8px 12px; grid-template-columns: 22px 1fr; border-radius: 12px; }
   .journey-buyer > svg { width: 22px; }
   .journey-buyer strong { font-size: 17px; }
-  .journey-buyer > div > span { font-size: 10px; margin-bottom: 5px; }
-  .journey-permission { font-size: 9px; }
-  .hero-journey figcaption { bottom: -4px; font-size: 10px; }
+  .journey-buyer > div > span { font-size: 11px; margin-bottom: 5px; }
+  .journey-permission { font-size: 11px; }
+  .hero-journey figcaption { bottom: -4px; font-size: 11px; }
   .hero-context { display: block; padding-block: 22px; }
-  .hero-context p { font-size: 12px; }
-  .hero-context a { margin-top: 8px; font-size: 12px; }
+  .hero-context a { margin-top: 14px; font-size: 14px; }
 }
 @media (prefers-reduced-transparency: reduce), (forced-colors: active) {
   .journey-exchange { background: var(--porcelain); box-shadow: none; }
